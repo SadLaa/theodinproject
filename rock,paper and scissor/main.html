@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function computerPlay(){
+		const computerHand = Math.floor((Math.random()*3)+1);
+		if(computerHand === 1){
+			return "rock";
+		} else if (computerHand === 2){
+			return "paper";
+		}else {
+			return "scissor";
+		}
+	}
+	function playRound(playerSelection, computerSelection){
+		if(playerSelection == "rock" && computerSelection == "paper"){
+			console.log("You use rock, computer use paper. You Lose!");
+			return "computer";
+		} else if(playerSelection == "paper" && computerSelection == "scissor"){
+			console.log("You use paper, computer use scissor. You Lose!");
+			return "computer";
+		} else if(playerSelection == "scissor" && computerSelection == "rock"){
+			console.log("You use scissor, computer use rock. You Lose!");
+			return "computer";
+		}else if(playerSelection == "rock" && computerSelection == "scissor"){
+			console.log("You use rock, computer use scissor. You Win!");
+			return "user";
+		}else if(playerSelection == "paper" && computerSelection == "rock"){
+			console.log("You use paper, computer use rock. You Win!");
+			return "user";
+		}else if(playerSelection == "scissor" && computerSelection == "paper"){
+			console.log("You use scissor, computer use paper. You Win!");
+			return "user";
+		}else if(playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissor"){
+			console.log("Invalid Input. Try Again");
+			return "none"
+		}else {
+			console.log("Draw! Try Again");
+			return "none"
+		}
+	}
+	let playerSelection = prompt("Enter your Hand (rock,paper or scissor):");
+	playerSelection = playerSelection.toLowerCase();
+	const computerSelection = computerPlay();
+	let winner = playRound(playerSelection, computerSelection);
+	console.log(winner);
+
+</script>
+
+</body>
+</html>
