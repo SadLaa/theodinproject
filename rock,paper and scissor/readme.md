@@ -1,1 +1,0 @@
-rock, paper and scissor game using Javascript
