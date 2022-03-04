@@ -56,9 +56,11 @@ function computerPlay(){
 			}
 			if(playerScore === 3 && computerScore <=2){
 				console.log("You Win!");
+				return "user";
 				break;
 			}else if(computerScore === 3 && playerScore <=2) {
 				console.log("Computer Wins");
+				return "computer";
 				break;
 			} else continue;
 		}
